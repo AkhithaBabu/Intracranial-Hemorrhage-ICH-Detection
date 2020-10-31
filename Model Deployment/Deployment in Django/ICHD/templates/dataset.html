@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>Dataset</h2>			
+		</header>
+		<center>
+			<p>
+				The brain CT dataset was provided by the Radiological Society of North America (RSNA®) in collaboration with members of the American Society of Neuroradiology and MD.ai which is freely available for practitioners.<br />
+				It is composed of more than 25,000 annotated non-contrast cranial CT exams which have between 20 to 60 slices per CT scan of size 512×512.  It consists of a set of image IDs and multi labels of presence and absence of hemorrhage and if present, then its type (subarachnoid, intraventricular, subdural, epidural, and intraparenchymal hemorrhage).<br />
+				The dataset was split up into training, validation, and testing sets for an unbiased evaluation of our model fit on the training set.
+			</p>
+		</center>		
+	</div>	
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();		
+		addTitle();
+	  };
+</script>
+{% endblock%}

@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+	.backbutton
+	{
+		height: 1.5em!important; 
+		line-height: 1.5em!important;
+		padding:0 1.25em;
+	}
+</style>
+<!-- Main -->
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>Intracranial Hemorrhage Detection Result</h2>			
+		</header>
+		
+
+		<!-- Content -->
+		<section id="content">
+			<center><h2>{{data.msg}}</h2></center>
+			<center><img src="{{data.CTSCAN}}"/ width="560px"></center>
+			
+			{% if data.show %}
+			<table>
+				<tr>
+					{% for col in data.columns %}
+						<th>{{col}}</th>
+					{% endfor %}
+				</tr>
+				<tr>
+					{% for val in data.values %}
+						<td>{{val}}</td>
+					{% endfor %}
+				</tr>
+			</table>
+			{% endif %}
+			<center><a href='model-deployment.html' class='button primary backbutton'>Back</a></center>
+		</section>		
+	</div>
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();	
+		addTitle();	
+	  };
+</script>
+{% endblock%}

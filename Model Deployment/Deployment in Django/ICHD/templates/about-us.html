@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- Main -->
+<style>
+	.margin-zero{ margin: 0px;}
+	h3 span
+	{
+		font-size: 15px;
+	}
+</style>
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>About Us</h2>
+		</header>
+		<!-- Content -->
+		<section id="content">
+			<center>
+				<span class="image"><img src="{% static 'images/upasana.jpg' %}" alt="" width="200" height="160" /></span>
+				<h3 class="margin-zero">Dr. Upasana Talukdar</h3>
+				<p>
+					<i>(B.Tech, M.Tech, Ph.D.)</i><br />
+					Assistant Professor<br />
+					Dept. of Data Science & Analytics<br />
+					Central University of Rajasthan, India
+				</p>
+			</center>
+
+		</section>
+		<div class="row gtr-150">
+			<div class="col-6 col-12-medium">
+				<!-- Left Sidebar -->
+				<section id="sidebar">
+					<section>
+						<center>
+							<a href="https://bharatc9530.github.io/" class="image"><img src="{% static 'images/bharat.jpg' %}" alt="" width="200" height="160" /></a>
+							<h3  class="margin-zero">Bharat Choudhary <span>(Student)</span></h3>
+							<p>								
+								M. Sc. Computer Science (Big Data Analytics)<br />
+								Central University of Rajasthan, India
+							</p>
+						</center>
+					</section>
+				</section>
+
+			</div>
+
+			<div class="col-6 col-12-medium">
+
+				<!-- Right Sidebar -->
+				<section id="sidebar">
+					<section>
+						<center>
+							<a href="https://akhithababu.github.io/" class="image"><img src="{% static 'images/akhitha.jpg' %}" alt="" width="200" height="160"/></a>
+							<h3 class="margin-zero">Akhitha Babu <span>(Student)</span></h3>
+								<p>
+									M. Sc. Computer Science (Big Data Analytics)<br />
+									Central University of Rajasthan, India
+								</p>
+							</center>
+					</section>
+				</section>
+
+			</div>
+		</div>
+	</div>
+</div>	
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();
+		addTitle();		
+	  };
+</script>
+{% endblock%}

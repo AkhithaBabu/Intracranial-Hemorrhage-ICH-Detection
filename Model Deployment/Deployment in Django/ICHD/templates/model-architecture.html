@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div id="main" class="wrapper style1">
+
+	<div class="container">
+		<header class="major">
+			<h2>Model Architeture</h2>
+
+		</header>
+		<center>
+			<span class="image"><img src="{% static 'images/1.jpg' %}" alt="" width="750" height="500" /></span>
+			<br /><br />
+			<p>
+			After the CNN model is trained, the extracted feature outputs received from CNNs are fed to the XGBoost and SVM model for classification as an input to the XGBoost and SVM classifier. Using this trained model training, validation, and testing datasets are predicted. Both predicted values of training and validation datasets are given as an input feature vector to fit the XGBoost and SVM model.		
+			</p>
+		</center>		
+	</div>	
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();
+		addTitle();		
+	  };
+</script>
+{% endblock%}

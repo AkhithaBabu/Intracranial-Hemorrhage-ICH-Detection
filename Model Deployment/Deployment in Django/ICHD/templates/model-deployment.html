@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+	.error
+	{
+		color:red;
+		font-weight: 500;
+	}
+</style>
+
+<!-- Main -->
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>Model Deployment</h2>
+			<p>Input a head CT scan image</p>
+		</header>
+		
+
+		<!-- Content -->
+		<section id="content">
+			<form method="POST" action="predict.html"  enctype="multipart/form-data">
+				{% csrf_token %}
+			<center>
+				<input type="file" id="btnFileUpload" value="Upload" name="CTSCAN" required />
+				{% if data.error %}
+					<br><span class="error">{{data.error}}</span>
+				{% endif%}
+			</center>
+			<br/>
+				
+			<center><input type="submit" class="button primary" value="Result"/></center>
+			</form>
+		</section>
+
+	</div>
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();
+		addTitle();		
+	  };
+</script>
+
+{% endblock%}

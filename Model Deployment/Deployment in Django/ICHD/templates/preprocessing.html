@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>Pre-processing</h2>
+		</header>
+		<center>
+			<h3>Method-I</h3>
+			
+			<span class="image"><img src="{% static 'images/p1.jpg' %}" alt="" /></span>
+			<br /><br />
+			<p>
+				The threshold of BSD (brain, subdural, bone) windowing of single slice was taken and the CT scan was transformed into three windows: brain window (Level:40, Width: 80), subdural window (Level: 80, Width: 200) and bone window (Level: 600, Width:2000). The three windows were concatenated to form three channel images. This was followed by a resampling technique to get a little more spatial resolution from adjacent slices which kept the pixel spacing consistent, else it may be hard for the model to generalize. Finally, the image was cropped to focus on the informative part.
+			</p>
+			<br />
+			<h3>Method-II</h3>
+			
+			<span class="image"><img src="{% static 'images/p2.jpg' %}" alt="" /></span>
+			<br /><br />
+			<p>
+				The three adjacent slices of CT scan with brain window (Level:40, Width: 80) was concatenated to construct RGB (Red, Green, Blue) images. The CT scan metadata enabled the information of the spatially adjacent slices: R = St-1, G = St, B = St+1; where St is the slice of the CT scan. Finally, the image was cropped to focus on the informative part.
+			</p>
+		</center>
+	</div>
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();		
+		addTitle();
+	  };
+</script>
+{% endblock%}

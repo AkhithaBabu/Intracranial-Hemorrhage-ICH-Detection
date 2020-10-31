@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ data.title}}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">  
+
+		<noscript> <link rel="stylesheet" href="{% static 'css/noscript.css' %}" /> </noscript>
+		<script>			
+			function addTitle() {
+				$('.title').html("ICH Detection")
+			  }			  
+		</script>		
+	</head>
+	<style>
+		.wrapper {
+			padding: 2em 0 4em 0!important;
+		}
+		header.major:after {
+			background: #e44c65;
+			content: '';
+			display: inline-block;
+			height: 0.2em;
+			max-width: 30em;
+			width: 75%;
+			position: relative;
+			top: -20px;
+		}			
+	.gtr-uniform a:hover {
+		color: #272833 !important;
+		font-weight: 1000;
+		border-bottom-color: transparent;
+	}
+	.hidden
+	{
+		display: none;
+	}
+	header.major {
+		margin: 0 0 2em 0!important;
+	}
+	header #headerHeading
+	{
+		top: 4px;
+    	position: absolute;
+    	left: 10px;
+	}	
+	
+	</style>
+	
+	<body class="is-preload {{ data.bodyclass}}" onload="addTitle()">
+		
+		<div id="page-wrapper">
+			<!-- Header -->
+			<header id="header">				
+				<h2 class="hidden" id="headerHeading">Automated Intracranial Hemorrhage (ICH) Detection</h2>
+				<nav id="nav">
+					<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="model-deployment.html">Model Deployment</a></li>
+							<li>
+								<a href="#">Concepts</a>
+								<ul>
+									<li><a href="model-architecture.html">Model Architeture</a></li>
+									<li>
+										<a href="#">Methodology</a>
+										<ul>
+											<li><a href="dataset.html">Dataset</a></li>
+											<li><a href="preprocessing.html">Preprocessing</a></li>										
+											<li><a href="results.html">Results</a></li>
+										</ul>
+									</li>
+									<li><a href="future-scope.html">Future Scope</a></li>
+								</ul>
+							</li>
+							<li><a href="about-us.html">About Us</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			{% block content %}
+            {% endblock%}
+			
+		<footer id='footer' style="padding:20px">
+			<h1 style='margin:0px'> &copy; Copyright 2020: Deployment By <a href='https://abhashpanwar.github.io/resume/' target="_blank">Panwar Abhash Anil</a></h1>
+		</footer>
+		<!-- Scripts -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'js/browser.min.js' %}"></script>
+		<script src="{% static 'js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'js/util.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>					
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="main" class="wrapper style1">
+	<div class="container">
+		<header class="major">
+			<h2>Future Scope</h2>			
+		</header>
+		<center>
+			<p>
+				To foster effective, safe, and standardized clinical decision support and diagnostics, artificial intelligence (AI) accelerated use cases medical images should be continuously updated as new opportunities present themselves. The improvements in the field of machine learning (ML) and deep learning (DL) will correlate closely with reliable applications in the healthcare domain.  However, the trial and error method will greatly influence the value of this technology in the real world and the grade to which it will administer in the medical device sector, companies making efforts to bring reliable and accurate medical diagnostics based on machine and deep learning applications to market may be poised to make a dent in the next wave of medical diagnostic tech.
+			</p>
+		</center>
+	</div>
+</div>
+<script>
+	function removeHidden() {
+		var element = document.getElementById("headerHeading");
+		element.classList.remove("hidden");
+	  }
+	  window.onload = function() {
+		removeHidden();
+		addTitle();		
+	  };
+</script>
+{% endblock%}
